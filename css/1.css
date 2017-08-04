@@ -38,6 +38,7 @@ li{
 	margin: 0;
 	padding: 0;
 	position: relative;
+	background-color:#161616;
 }
 
 #Arrow_up {
@@ -153,29 +154,49 @@ li{
 }
 
 .front {
+<<<<<<< HEAD
 
+=======
+	background-color: #000000E6;
+>>>>>>> fdbf5b52ee81076da47ec2f1ce375c0ea75fb446
 	transform: translateZ(250px);
 }
 
 .back {
+<<<<<<< HEAD
 
+=======
+	background-color: #000000E6;
+>>>>>>> fdbf5b52ee81076da47ec2f1ce375c0ea75fb446
 	transform: rotateY(180deg)  translateZ(250px);
 }
 
 .left {
+<<<<<<< HEAD
 
+=======
+	background-color: #000000E6;
+>>>>>>> fdbf5b52ee81076da47ec2f1ce375c0ea75fb446
 	left: -250px;
 	transform: rotateY(-90deg);
 }
 
 .right {
+<<<<<<< HEAD
 
+=======
+	background-color: #000000E6;
+>>>>>>> fdbf5b52ee81076da47ec2f1ce375c0ea75fb446
 	left: 250px;
 	transform: rotateY(90deg);
 }
 
 .top {
+<<<<<<< HEAD
 
+=======
+	background-color: #000000E6;
+>>>>>>> fdbf5b52ee81076da47ec2f1ce375c0ea75fb446
 	top: -250px;
 	transform: rotateX(90deg);
 }
