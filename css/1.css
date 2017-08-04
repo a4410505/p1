@@ -4,6 +4,7 @@ html,body {
 	height: 100%;
 	width: 100%;
 	font-family: "微软雅黑";
+	overflow: auto;
 }
 
 li{
@@ -14,6 +15,8 @@ li{
 .container {
 	height: 100%;
 	width: 100%;
+	margin: 0;
+	padding: 0;
 	position: relative;
 }
 
@@ -21,27 +24,41 @@ li{
 	position: absolute;
 	margin: 0;
 	top: 0;
-	left: 50%;
+	left: 48%;
 	cursor: pointer;
-	animation: a-up 1s infinite;
+	-moz-animation: a-up 1s infinite;
+	-webkit-animation: a-up 1s infinite;
 }
 
-@keyframes a-up{
+@-moz-keyframes a-up{
+	0%{padding-top: 0;}
+	50%{padding-top:10px ;}
+	100%{padding-top:0px ;}
+}
+
+@-webkit-keyframes a-up{
 	0%{padding-top: 0;}
 	50%{padding-top:10px ;}
 	100%{padding-top:0px ;}
 }
 
 #Arrow_down {
-	position: absolute;
+	position: fixed;
 	margin: 0;
 	bottom: 0;
-	left: 50%;
+	left: 48%;
 	cursor: pointer;
-	animation: a-down 1s infinite;
+	-moz-animation: a-down 1s infinite;
+	-webkit-animation: a-down 1s infinite;
 }
 
-@keyframes a-down{
+@-moz-keyframes a-down{
+	0%{padding-bottom: 0;}
+	50%{padding-bottom:10px ;}
+	100%{padding-bottom:0px ;}
+}
+
+@-webkit-keyframes a-down{
 	0%{padding-bottom: 0;}
 	50%{padding-bottom:10px ;}
 	100%{padding-bottom:0px ;}
@@ -51,12 +68,19 @@ li{
 	position: absolute;
 	margin: 0;
 	top: 40%;
-	left: 20%;
+	left: 15%;
 	cursor: pointer;
-	animation: a-left 1s infinite;
+	-moz-animation: a-left 1s infinite;
+	-webkit-animation: a-left 1s infinite;
 }
 
-@keyframes a-left{
+@-moz-keyframes a-left{
+	0%{padding-left: 0;}
+	50%{padding-left:10px ;}
+	100%{padding-left:0px ;}
+}
+
+@-webkit-keyframes a-left{
 	0%{padding-left: 0;}
 	50%{padding-left:10px ;}
 	100%{padding-left:0px ;}
@@ -66,23 +90,30 @@ li{
 	position: absolute;
 	margin: 0;
 	top: 40%;
-	right: 20%;
+	right: 15%;
 	cursor: pointer;
-	animation: a-right 1s infinite;
+	-moz-animation: a-right 1s infinite;
+	-webkit-animation: a-right 1s infinite;
 }
 
-@keyframes a-right{
+@-moz-keyframes a-right{
+	0%{padding-right: 0;}
+	50%{padding-right:10px ;}
+	100%{padding-right:0px ;}
+}
+
+@-webkit-keyframes a-right{
 	0%{padding-right: 0;}
 	50%{padding-right:10px ;}
 	100%{padding-right:0px ;}
 }
 
 .Cube {
-	position: relative;
+	position: absolute;
 	width: 500px;
 	height: 500px;
-	top: 24%;
-	left: 38%;
+	top: 21%;
+	left: 35%;
 	perspective: 800px;
 }
 
@@ -248,4 +279,24 @@ li{
 	position: absolute;
 	top:15%;
 	left: 5%;
+}
+
+.loading{
+	position: absolute;
+	background: #161616;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	display: none;
+}
+
+.expand{ 
+	width:0%; 
+	height:1px; 
+	margin:2px 0; 
+	background:#2187e7; 
+	position:absolute;
+	top:50%;
+	box-shadow:0px 0px 10px 1px rgba(0,198,255,0.7);
+
 }
