@@ -132,29 +132,29 @@ li{
 }
 
 .front {
-	background-color: #000000e6;
+	background-color: #000000E6;
 	transform: translateZ(250px);
 }
 
 .back {
-	background-color: #000000e6;
+	background-color: #000000E6;
 	transform: rotateY(180deg)  translateZ(250px);
 }
 
 .left {
-	background-color: #000000e6;
+	background-color: #000000E6;
 	left: -250px;
 	transform: rotateY(-90deg);
 }
 
 .right {
-	background-color: #000000e6;
+	background-color: #000000E6;
 	left: 250px;
 	transform: rotateY(90deg);
 }
 
 .top {
-	background-color: #000000e6;
+	background-color: #000000E6;
 	top: -250px;
 	transform: rotateX(90deg);
 }
