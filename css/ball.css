@@ -131,7 +131,7 @@ h1{
 	width: 500px;
 	height: 500px;
 	margin: 0;
-	position: relative;
+	position: absolute;
 	top: 20%;
 	left:12%;
 	border-radius: 100%;
@@ -230,7 +230,7 @@ h1{
 .ball1{
 	width: 500px;
 	height: 500px;
-	position: relative;
+	position: absolute;
 	top:20%;
 	left: 25%;
 	border-radius: 100%;
