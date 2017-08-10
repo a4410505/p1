@@ -19,74 +19,6 @@ h1{
 	color: #ff2828;
 }
 
-.loading{
-	position: absolute;
-	background: #161616;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-}
-
-.loading_ball_1{
-	position: absolute;
-	float: left;
-	margin: 0;
-	top: 45%;
-	-moz-animation: ball-jump_1 3s infinite ease-in-out alternate;
-	-webkit-animation: ball-jump_1 3s infinite ease-in-out alternate;
-}
-
-@-moz-keyframes ball-jump_1{
-	0%{top:45%;left: 0%;}
-	25%{top:25%;left:25%}
-	50%{top:45%;left:50%;}
-	75%{top:65%;left:75%;}
-	100%{top:50%;left:97.2%;}
-}
-
-@-webkit-keyframes ball-jump_1{
-	0%{top:45%;left: 0%;}
-	25%{top:25%;left:25%}
-	50%{top:45%;left:50%;}
-	75%{top:65%;left:75%;}
-	100%{top:50%;left:97.2%;}
-}
-
-.loading_ball_2{
-	position: absolute;
-	float: left;
-	margin: 0;
-	top: 50.5%;
-	-moz-animation: ball-jump_2 3s infinite ease-in-out alternate;
-	-webkit-animation: ball-jump_2 3s infinite ease-in-out alternate;
-}
-
-@-moz-keyframes ball-jump_2{
-	0%{top:50.5%;left: 0%;}
-	25%{top:65%;left:25%}
-	50%{top:50.5%;left:50%;}
-	75%{top:25%;left:75%;}
-	100%{top:45%;left:97.2%;}
-}
-
-@-webkit-keyframes ball-jump_2{
-	0%{top:50.5%;left: 0%;}
-	25%{top:65%;left:25%}
-	50%{top:50.5%;left:50%;}
-	75%{top:25%;left:75%;}
-	100%{top:45%;left:97.2%;}
-}
-
-.expand{ 
-	width:0%; 
-	height:1px; 
-	margin:2px 0; 
-	background:#2187e7; 
-	position:absolute;
-	top:50%;
-	left:0%;
-	box-shadow:0px 0px 10px 1px rgba(0,198,255,0.7);
-}
 
 .container {
 	height: 100%;
@@ -247,4 +179,9 @@ h1{
 
 .right img{
 	margin-left: 10%;
+}
+
+.left img{
+	margin-top: 10%;
+	max-width: 500px;
 }
