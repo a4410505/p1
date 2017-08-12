@@ -8,6 +8,7 @@ $(".expand").animate({width:"100%"},3000,function(){
 
 
 $(function(){
+	
 var canvas=$("#canvas")[0];
 
 canvas.width=500;
@@ -17,45 +18,60 @@ var context = canvas.getContext("2d");
 var ax = 0;
 var bx = 50;
 var by = 763;
-var vx = 6*Math.random();
+var vx = 6;
 var vy = 10;
-
 var bricks = [];
+var row=5;
+var col=5;
+
+bricks=new Array(row);
+	for(i = 0;i<row;i++){
+		bricks[i]=new Array(col);
+	for(j = 0;j<col;j++){
+		bricks[i][j]=1;
+}		
+}
+
+context.fillStyle="#058"
+context.font="40px sans-serif";
+context.textAlign="center";
+context.fillText("点击开始游戏",250,400);
+context.fill();
 
 
-var a = brick(context,0,775,100,25,"black","sliver");
-var b = ball(context,bx,by,10,"blue","sliver");
+$("#canvas").bind("mousedown",function(){
 
+function draw(){
+	brick(context,ax,775,100,25,"black","sliver");
+	 
+	for(i = 0;i<row;i++){
+	for(j = 0;j<col;j++){
+		
+	if(bricks[i][j]==1){
+		if(i*95<=bx&&bx<=(i*100+105)&&by<=(j*25+35)){
+		bricks[i][j]=0;
+	 	vy =-10;
+	 }
 
-for(var i = 0;i<5;i++)
-	for(var j = 0;j<8;j++)
-{
-//var x = 100*i
-//var y = j*25;
-var R = Math.floor(Math.random()*255);
-var G = Math.floor(Math.random()*255);
-var B = Math.floor(Math.random()*255);
-var color = "rgb("+R+","+G+","+B+")";
-//var brick1=brick(context,x,y,100,25,color,"white");
-//bricks[i]=brick1;
-
-var abrick ={ x : 100*i,
-	          y: j*25};
-bricks[i,j]=abrick;
-abrick1(context);
-};
-
-	var timer =setInterval(
-		function(){
-	context.clearRect(bx-10,by-10,20,20);
+	 brick(context,i*100,j*25,100,25,"red","white")
+	}
+	
+  }
+}
+	
 	bx +=vx;
 	by -=vy;
 	ball(context,bx,by,10,"blue","sliver");
+	
+}
+
+function pz(){
 	if(by<=10){
 		vy=-10;
 	}
 	else if(by>=760&&ax<=bx&&bx<=(ax+100)){
 		vy=10;
+		vx =vx;
 	}
 	else if(by>=canvas.height-5){
 		context.clearRect(0,0,canvas.width,canvas.height);
@@ -72,42 +88,53 @@ abrick1(context);
 	    }
 	}
 	else if(bx>=(canvas.width-10)){
-		vx =-10*Math.random();
+		vx =-vx;
 	}
 	else if(bx<=10){
-		vx =10*Math.random();
+		vx =-vx;
 	}
-
+}
+  
+  
+	var timer =setInterval(
+		function update (){
+	context.clearRect(0,0,canvas.width,canvas.height);
+	draw();
+	pz();
+	
 	},
 	50
 	)
 
 
-
 $("#canvas").bind("mousemove",function s1 (e){
-	ax = e.clientX - canvas.getBoundingClientRect().left;
 	if(ax<=canvas.width-99){
-    context.clearRect(0,775,500,25)
-	brick(context,ax,775,100,25,"black","sliver");
+	ax = e.clientX - canvas.getBoundingClientRect().left;
+	}
+	
+	if(ax>=canvas.width-99){
+		ax = canvas.width-99;
 	}
 });
 
+$("#canvas").unbind("mousedown");
+})
 
-function abrick1(cxt){
+});
+
+
+
+function brick(cxt,x,y,width,height,fillColor,strokeColor){
 cxt.beginPath();
-cxt.rect(bricks[i,j].x,bricks[i,j].y,100,25);
+cxt.rect(x,y,width,height);
 cxt.closePath();
 
-cxt.fillStyle = color;
-cxt.strokeStyle = "white";
+cxt.fillStyle = fillColor;
+cxt.strokeStyle = strokeColor;
 
 cxt.fill();
 cxt.stroke();
 }
-
-
-});
-
 
 function ball(cxt,x,y,raidus,fillColor,strokeColor){
 	cxt.beginPath();
@@ -122,15 +149,5 @@ function ball(cxt,x,y,raidus,fillColor,strokeColor){
 }
 
 
-function brick(cxt,x,y,width,height,fillColor,strokeColor){
-cxt.beginPath();
-cxt.rect(x,y,width,height);
-cxt.closePath();
 
-cxt.fillStyle = fillColor;
-cxt.strokeStyle = strokeColor;
-
-cxt.fill();
-cxt.stroke();
-}
 
