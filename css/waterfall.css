@@ -1,0 +1,87 @@
+html,body{
+	margin: 0;
+	padding:0;
+	height: 100%;
+	width: 100%;
+	background-color: #f3e5c4;
+}
+
+header{
+	margin: 0 auto;
+	padding-top: 20px;
+	text-align: center;
+	color: #f67979;
+	font-size: 21px;
+	position: relative;
+}
+
+h1{
+	display: inline;
+}
+
+#content{
+	position: relative;
+	margin: 0 auto;
+}
+
+.box{
+	float: left;
+	padding: 15px 0 0 15px;
+}
+
+.pic{
+	padding: 10px;
+	border: 1px solid silver;
+	border-radius: 5px;
+	box-shadow: 0 0 5px silver;
+}
+
+.pic img{
+	max-width: 450px;
+}
+
+.r1{
+	cursor: pointer;
+	position: absolute;
+	left: 3%;
+	border-radius:100%;
+	-moz-animation: cc 4s linear infinite;
+	-webkit-animation: cc 4s linear infinite;
+	}
+	
+@-moz-keyframes cc{
+	0%{box-shadow: white 0 0 15px;}
+	50%{box-shadow: red 0 0 35px;}
+	100%{box-shadow: white 0 0 15px;}
+}
+
+@-webkit-keyframes cc{
+	0%{box-shadow: white 0 0 15px;}
+	50%{box-shadow: red 0 0 35px;}
+	100%{box-shadow: white 0 0 15px;}
+}
+
+.bigPic{
+	position: fixed;
+	top:0;
+	width:100%;
+	height: 100%;
+	background: #161616e6;
+	z-index: 10;
+	display: none;
+}
+
+.r2{
+	cursor: pointer;
+	position: absolute;
+	top: 3%;
+	left: 3%;
+}
+
+.picView{
+	display: block;
+	position: relative;
+	top:20%;
+	margin: 0 auto;
+	max-width: 600px;
+}
